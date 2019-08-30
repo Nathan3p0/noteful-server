@@ -5,6 +5,7 @@ const cors = require('cors')
 const helmet = require('helmet')
 const { NODE_ENV } = require('./config')
 const errorHandler = require('./errorHandler')
+const foldersRoute = require('../routes/folders')
 
 const app = express()
 
@@ -17,6 +18,8 @@ app.use(cors())
 app.get('/', (req, res, next) => {
     res.send('BUTTS')
 })
+
+app.use('/api/folders', foldersRoute)
 
 app.use(errorHandler)
 
