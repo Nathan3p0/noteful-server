@@ -16,12 +16,12 @@ app.use(morgan(morganOption))
 app.use(helmet())
 app.use(cors())
 
-app.get('/', (req, res, next) => {
-    res.send('BUTTS')
-})
-
 app.use('/api/folders', foldersRoute)
 app.use('/api/notes', notesRouter)
+
+app.get('/', (req, res, next) => {
+    res.send('noteful server')
+})
 
 app.use(errorHandler)
 
